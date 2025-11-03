@@ -1,0 +1,242 @@
+# =============================================================================
+# Alacritty Configuration for Ubuntu
+# Converted from Ghostty config (macOS)
+# =============================================================================
+
+# Window settings
+window:
+  # Window dimensions (changes require restart)
+  dimensions:
+    columns: 120
+    lines: 30
+
+  # Window padding
+  padding:
+    x: 10
+    y: 10
+
+  # Window decorations
+  decorations: full
+
+  # Window opacity (0.0 - 1.0)
+  opacity: 0.95
+
+  # Startup mode
+  startup_mode: Windowed
+
+# Scrolling
+scrolling:
+  # Maximum number of lines in the scrollback buffer
+  history: 10000
+
+  # Scrolling distance multiplier
+  multiplier: 3
+
+# Font configuration
+font:
+  # Normal font face
+  normal:
+    family: "JetBrains Mono"
+    style: Regular
+
+  # Bold font face
+  bold:
+    family: "JetBrains Mono"
+    style: Bold
+
+  # Italic font face
+  italic:
+    family: "JetBrains Mono"
+    style: Italic
+
+  # Bold italic font face
+  bold_italic:
+    family: "JetBrains Mono"
+    style: Bold Italic
+
+  # Font size
+  size: 17.0
+
+  # Offset is the extra space around each character
+  offset:
+    x: 0
+    y: 0
+
+  # Glyph offset determines the locations of the glyphs within their cells
+  glyph_offset:
+    x: 0
+    y: 0
+
+# =============================================================================
+# Colors - Catppuccin Mocha Theme
+# =============================================================================
+colors:
+  # Default colors
+  primary:
+    background: '#1e1e2e'
+    foreground: '#cdd6f4'
+    dim_foreground: '#7f849c'
+    bright_foreground: '#cdd6f4'
+
+  # Cursor colors
+  cursor:
+    text: '#1e1e2e'
+    cursor: '#f5e0dc'
+
+  # Vi mode cursor colors
+  vi_mode_cursor:
+    text: '#1e1e2e'
+    cursor: '#b4befe'
+
+  # Search colors
+  search:
+    matches:
+      foreground: '#1e1e2e'
+      background: '#a6adc8'
+    focused_match:
+      foreground: '#1e1e2e'
+      background: '#a6e3a1'
+
+  # Hint colors
+  hints:
+    start:
+      foreground: '#1e1e2e'
+      background: '#f9e2af'
+    end:
+      foreground: '#1e1e2e'
+      background: '#a6adc8'
+
+  # Line indicator colors
+  line_indicator:
+    foreground: None
+    background: None
+
+  # Selection colors
+  selection:
+    text: CellForeground
+    background: '#585b70'
+
+  # Normal colors
+  normal:
+    black:   '#45475a'
+    red:     '#f38ba8'
+    green:   '#a6e3a1'
+    yellow:  '#f9e2af'
+    blue:    '#89b4fa'
+    magenta: '#f5c2e7'
+    cyan:    '#94e2d5'
+    white:   '#bac2de'
+
+  # Bright colors
+  bright:
+    black:   '#585b70'
+    red:     '#f38ba8'
+    green:   '#a6e3a1'
+    yellow:  '#f9e2af'
+    blue:    '#89b4fa'
+    magenta: '#f5c2e7'
+    cyan:    '#94e2d5'
+    white:   '#a6adc8'
+
+  # Dim colors
+  dim:
+    black:   '#45475a'
+    red:     '#f38ba8'
+    green:   '#a6e3a1'
+    yellow:  '#f9e2af'
+    blue:    '#89b4fa'
+    magenta: '#f5c2e7'
+    cyan:    '#94e2d5'
+    white:   '#bac2de'
+
+  # Indexed colors
+  indexed_colors:
+    - { index: 16, color: '#fab387' }
+    - { index: 17, color: '#f5e0dc' }
+
+# Bell
+bell:
+  animation: EaseOutExpo
+  duration: 0
+  color: '#ffffff'
+
+# Mouse
+mouse:
+  # Hide mouse cursor when typing
+  hide_when_typing: true
+
+  # URL launcher
+  url:
+    launcher:
+      program: xdg-open
+    modifiers: Control
+
+# Cursor
+cursor:
+  # Cursor style
+  style:
+    shape: Block
+    blinking: Off
+
+  # Vi mode cursor style
+  vi_mode_style: None
+
+  # Cursor blinking interval in milliseconds
+  blink_interval: 750
+
+  # If this is true, the cursor will be rendered as a hollow box when the window is not focused
+  unfocused_hollow: true
+
+  # Thickness of the cursor relative to the cell width
+  thickness: 0.15
+
+# Live config reload
+live_config_reload: true
+
+# Shell
+shell:
+  program: /usr/bin/zsh
+  args:
+    - --login
+
+# Working directory
+working_directory: None
+
+# Send ESC (\x1b) before characters when alt is pressed
+alt_send_esc: true
+
+# Key bindings
+key_bindings:
+  # Copy/Paste
+  - { key: V,        mods: Control|Shift, action: Paste            }
+  - { key: C,        mods: Control|Shift, action: Copy             }
+  - { key: Insert,   mods: Shift,         action: PasteSelection   }
+  
+  # Search
+  - { key: F,        mods: Control|Shift, action: SearchForward    }
+  - { key: B,        mods: Control|Shift, action: SearchBackward   }
+  
+  # Font size
+  - { key: Plus,     mods: Control,       action: IncreaseFontSize }
+  - { key: Minus,    mods: Control,       action: DecreaseFontSize }
+  - { key: Key0,     mods: Control,       action: ResetFontSize    }
+  
+  # Fullscreen
+  - { key: F11,      mods: None,          action: ToggleFullscreen }
+  
+  # New window
+  - { key: Return,   mods: Control|Shift, action: SpawnNewInstance }
+
+# Debug
+debug:
+  # Display the time it takes to redraw each frame
+  render_timer: false
+
+  # Keep the log file after quitting Alacritty
+  persistent_logging: false
+
+  # Log level
+  log_level: Warn
+
+  # Print all received window events
+  print_events: false

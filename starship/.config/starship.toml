@@ -1,0 +1,110 @@
+# =============================================================================
+# Starship Prompt Configuration for Ubuntu
+# Migrated from macOS dotfiles
+# =============================================================================
+
+# Schemas
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# General options
+add_newline = false 
+format = """$directory$character"""
+palette = "catppuccin_mocha"
+right_format = """$all"""
+
+# =============================================================================
+# Modules
+# =============================================================================
+
+[character] 
+success_symbol = '[➜](bold green)' 
+error_symbol = '[➜](bold red) '
+
+[directory]
+truncation_length = 3
+truncate_to_repo = true
+style = "bold cyan"
+
+[git_branch]
+format = '[$symbol$branch(:$remote_branch)]($style)'
+style = 'bold green'
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style))'
+style = 'bold red'
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = 'bright-black'
+
+[c]
+format = '\[[$symbol($version)]($style)\]'
+version_format = 'v${major}'
+symbol = ' '
+
+[cpp]
+disabled = false
+format = '\[[$symbol($version)]($style)\]'
+symbol = ' '
+
+[cmd_duration]
+disabled = true
+
+[java]
+format = '\[[$symbol($version)]($style)\]'
+version_format = 'v${major}'
+symbol = ' '
+
+[lua]
+format = '\[[$symbol($version)]($style)\]'
+symbol = ' '
+
+[nodejs]
+format = '\[[$symbol($version)]($style)\]'
+symbol = ' '
+
+[python]
+format = '\[[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style)\]'
+symbol = ' '
+
+[rust]
+format = '\[[$symbol($version)]($style)\]'
+symbol = ' '
+
+[golang]
+format = '\[[$symbol($version)]($style)\]'
+symbol = ' '
+
+[package]
+format = '\[[$symbol$version]($style)\]'
+
+# =============================================================================
+# Colorscheme - Catppuccin Mocha
+# =============================================================================
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
