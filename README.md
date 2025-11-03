@@ -5,7 +5,6 @@ Dotfiles adaptados para Ubuntu desde macOS. Incluye configuraciones para **ZSH**
 ## 📂 Estructura
 
 ```
-ubuntu/
 ├── zsh/
 │   └── .zshrc                    # Configuración de ZSH
 ├── starship/
@@ -13,9 +12,6 @@ ubuntu/
 ├── alacritty/
 │   └── .config/alacritty/
 │       └── alacritty.yml         # Configuración de Alacritty (convertida desde Ghostty)
-├── install_dotfiles.sh           # Script de instalación automática
-├── remove_lazyvim.sh             # Script para eliminar LazyVim
-└── .stow-global-ignore           # Patrones de archivos a ignorar por Stow
 ```
 
 ## 🚀 Instalación Rápida
@@ -23,15 +19,14 @@ ubuntu/
 ### 1. Clonar el repositorio (si aún no lo has hecho)
 
 ```bash
-git clone https://github.com/wall3n/dotfiles.git ~/.dotfiles
-cd ~/.dotfiles/ubuntu
+git clone https://github.com/wall3n/ubuntu-dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
 ```
 
 ### 2. Ejecutar el script de instalación
 
 ```bash
-chmod +x install_dotfiles.sh
-./install_dotfiles.sh
+stow .
 ```
 
 El script instalará automáticamente:
